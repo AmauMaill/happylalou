@@ -8,4 +8,4 @@ tags: ["test", "linogravure"]
 
 Bienvenue sur le site.
 
-{{< image "vibrant-love.jpg" "A beautiful linocut print" >}}
+{{< image "vibrant-love.webp" "A beautiful linocut print" >}}
