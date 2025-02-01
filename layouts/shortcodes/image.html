@@ -1,0 +1,9 @@
+{{- $image := .Page.Resources.Get (.Get 0) -}} {{- with $image -}} {{- $resized
+:= $image.Resize "600x webp" -}}
+<img
+  src="{{ $resized.RelPermalink }}"
+  width="{{ $resized.Width }}"
+  height="{{ $resized.Height }}"
+  alt="{{ $.Get 1 }}"
+/>
+{{- end -}}
