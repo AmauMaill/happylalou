@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ $style := resources.Get "css/styles.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
   </head>
   <body>

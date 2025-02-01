@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<p><strong>Author:</strong> {{ .Params.author }}</p>
+<p><strong>Tags:</strong> {{ delimit .Params.tags ", " }}</p>
+
+<p>{{.Content}}</p>
+{{ end }}
