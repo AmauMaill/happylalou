@@ -1,3 +1,37 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem; /* 10px */
+}
+
+nav a img {
+  display: block;
+  width: 5rem; /* 80px */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem; /* 20px */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  font-size: 1rem; /* Default body text size */
+  text-decoration: none;
+}
+
+nav {
+  position: relative;
+  padding-bottom: 30px; /* Adjust for spacing */
+}
+
 h1,
 h2 {
   color: blue;
