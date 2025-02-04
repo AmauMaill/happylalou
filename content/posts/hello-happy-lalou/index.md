@@ -4,6 +4,7 @@ date: 2025-02-01
 summary: 'On teste le résumé.'
 author: 'Julie Bauzac'
 tags: ["test", "linogravure"]
+thumbnail: "vibrant-love.webp"
 ---
 
 Bienvenue sur le site.
