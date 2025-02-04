@@ -1,3 +1,4 @@
 baseURL = 'https://happy-lalou.com/'
+defaultContentLanguage = "fr"
 languageCode = 'fr-FR'
 title = 'Happy Lalou'

@@ -1,6 +1,30 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ range .Pages }}
-<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-<p>{{.Summary}}</p>
+
+<a href="{{ .RelPermalink }}" class="post-link">
+  <div class="post-preview">
+    {{ with .Resources.GetMatch .Params.thumbnail }}
+    <img
+      src="{{ .RelPermalink }}"
+      alt="Thumbnail for {{ $.Title }}"
+      class="post-thumbnail"
+    />
+    {{ end }}
+    <div class="post-info">
+      <h1>{{ .Title }}</h1>
+      <p class="post-meta">
+        <span class="author">{{ .Params.author }}</span> ·
+        <span class="date">{{ .Date | dateFormat "2 January 2006" }}</span>
+        <span class="tags">
+          {{ range .Params.tags }}
+          <span class="tag">{{ . }}</span>
+          {{ end }}
+        </span>
+      </p>
+      <p class="summary">{{ .Summary }}</p>
+    </div>
+  </div>
+</a>
+
 {{ end }} {{ end }}

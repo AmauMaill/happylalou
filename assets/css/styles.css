@@ -1,3 +1,4 @@
+/* General */
 nav {
   display: flex;
   align-items: center;
@@ -35,4 +36,65 @@ nav {
 h1,
 h2 {
   color: blue;
+}
+
+/* Posts */
+.post-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Keep text color */
+}
+
+.post-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.post-preview:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  cursor: pointer;
+}
+
+.post-thumbnail {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-info h1 {
+  size: 1rem;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.date {
+  font-style: italic;
+}
+
+.tags {
+  font-size: 0.85em;
+}
+
+.tag {
+  background: #eee;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.85em;
+  color: #555;
 }
