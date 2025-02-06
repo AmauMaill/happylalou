@@ -8,6 +8,7 @@
       content="Site sur les activités de création artistique de Happy Lalou"
     />
     {{ $style := resources.Get "css/styles.css" | fingerprint }}
+    <link rel="preload" href="{{ $style.RelPermalink }}" as="style" />
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
     <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
