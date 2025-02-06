@@ -1,8 +1,18 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<p><strong>Author:</strong> {{ .Params.author }}</p>
-<p><strong>Tags:</strong> {{ delimit .Params.tags ", " }}</p>
+<article class="content">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <span class="author">{{ .Params.author }}</span> ·
+    <span class="date">{{ .Date | dateFormat "2 January 2006" }}</span>
+    <span class="tags">
+      {{ range .Params.tags }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+    </span>
+  </header>
 
-<p>{{.Content}}</p>
-
+  <section>
+    <p>{{ .Content }}</p>
+  </section>
+</article>
 {{ end }}
