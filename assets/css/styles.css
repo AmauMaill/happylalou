@@ -118,24 +118,26 @@ footer {
 }
 
 .post-info h1 {
-  size: 1rem;
+  font-size: 1rem;
 }
 
 .post-meta {
   font-size: 0.9em;
-  color: #777;
+  color: #333;
 }
 
 .author {
   font-weight: bold;
+  color: #222;
 }
 
 .date {
   font-style: italic;
+  color: #444;
 }
 
 .tags {
-  font-size: 0.85em;
+  margin-left: 1rem;
 }
 
 .tag {
@@ -143,8 +145,8 @@ footer {
   padding: 3px 6px;
   border-radius: 4px;
   margin-right: 5px;
-  font-size: 0.85em;
-  color: #555;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* Post */
@@ -195,7 +197,7 @@ footer {
 
 .image-caption {
   font-size: 0.9rem;
-  color: #777; /* Greyish text */
+  color: #444; /* Greyish text */
   margin-top: 0.25rem;
   font-style: italic;
 }

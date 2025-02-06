@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site sur les activités de création artistique de Happy Lalou"
+    />
     {{ $style := resources.Get "css/styles.css" | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
@@ -11,7 +15,7 @@
   <body>
     <header>{{ partial "header" . }}</header>
 
-    <main>{{ block "main" . }}{{ end }}</main>
+    <main role="main">{{ block "main" . }}{{ end }}</main>
 
     <footer>{{ partial "footer.html" . }}</footer>
   </body>

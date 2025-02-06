@@ -1,10 +1,12 @@
 {{ define "main" }}
-<article class="content">
+<article class="content" aria-labelledby="post-title">
   <header>
-    <h1>{{ .Title }}</h1>
-    <span class="author">{{ .Params.author }}</span> ·
-    <span class="date">{{ .Date | dateFormat "2 January 2006" }}</span>
-    <span class="tags">
+    <h1 id="post-title">{{ .Title }}</h1>
+    <span class="author" aria-label="Auteur">{{ .Params.author }}</span> ·
+    <span class="date" aria-label="Date">
+      {{ .Date | dateFormat "2 January 2006" }}
+    </span>
+    <span class="tags" aria-label="Tags">
       {{ range .Params.tags }}
       <span class="tag">{{ . }}</span>
       {{ end }}
