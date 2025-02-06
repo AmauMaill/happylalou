@@ -1,8 +1,8 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1>Posts</h1>
 {{ range .Pages }}
 
-<a href="{{ .RelPermalink }}" class="post-link">
+<a href="{{ .RelPermalink }}" class="post-link" aria-describedby="post-title-{{ .Title | urlize }}">
   <div class="post-preview">
     {{ with .Resources.GetMatch .Params.thumbnail }}
     <img
@@ -12,7 +12,7 @@
     />
     {{ end }}
     <div class="post-info">
-      <h1>{{ .Title }}</h1>
+      <h2 id="post-title-{{ .Title | urlize }}">{{ .Title }}</h1>
       <p class="post-meta">
         <span class="author">{{ .Params.author }}</span> ·
         <span class="date">{{ .Date | dateFormat "2 January 2006" }}</span>

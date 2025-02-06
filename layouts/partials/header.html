@@ -1,10 +1,9 @@
-<nav>
+<nav aria-label="Main navigation">
     <a href="{{ "/" | relURL }}">
       <img src="{{ (resources.Get "svg/home.svg").RelPermalink }}" alt="Home">
     </a>
     <ul>
-      <li><a href="{{ "about/" | relURL }}">À propos</a></li>
-      <li><a href="{{ "posts/" | relURL }}">Posts</a></li>
+      <li><a href="{{ "about/" | relURL }}" title="À propos du site">À propos</a></li>
+      <li><a href="{{ "posts/" | relURL }}" title="Posts du blog">Posts</a></li>
     </ul>
 </nav>
-  
