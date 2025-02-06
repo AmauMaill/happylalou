@@ -43,6 +43,31 @@ nav ul li {
 nav ul li a {
   font-size: 1rem; /* Default body text size */
   text-decoration: none;
+  color: #333; /* Default text color */
+  position: relative; /* Set up for pseudo-element */
+  transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+  content: ""; /* Empty content */
+  position: absolute;
+  left: -0.25rem; /* Shift the left edge slightly */
+  width: calc(100% + 0.5rem); /* Extend the width of the highlight */
+  bottom: 0;
+  height: 100%;
+  background-color: lightblue; /* Highlighter color */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+  z-index: -1; /* Behind the text */
+  transform: skewX(-15deg);
+}
+
+nav ul li a:hover::before {
+  opacity: 1; /* Show highlighter on hover */
+}
+
+nav ul li a:hover {
+  color: #333; /* Keep text color unchanged */
 }
 
 h1,
