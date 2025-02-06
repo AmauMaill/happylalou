@@ -5,6 +5,7 @@
 <a href="{{ .RelPermalink }}" class="post-link" aria-describedby="post-title-{{ .Title | urlize }}">
   <div class="post-preview">
     {{ with .Resources.GetMatch .Params.thumbnail }}
+    {{ $image := .Resize "800x webp" }}
     <img
       src="{{ .RelPermalink }}"
       alt="Thumbnail for {{ $.Title }}"
