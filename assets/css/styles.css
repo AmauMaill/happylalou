@@ -124,6 +124,8 @@ footer {
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .post-preview:hover {
@@ -159,19 +161,6 @@ footer {
 .date {
   font-style: italic;
   color: #444;
-}
-
-.tags {
-  margin-left: 1rem;
-}
-
-.tag {
-  background: #eee;
-  padding: 3px 6px;
-  border-radius: 4px;
-  margin-right: 5px;
-  font-size: 1rem;
-  color: #333;
 }
 
 /* Post */
@@ -232,4 +221,27 @@ footer {
     width: 90%; /* Slightly smaller width on mobile */
     max-width: 100%;
   }
+}
+
+/* Tags */
+.tags {
+  margin-left: 1rem;
+}
+
+.tag {
+  background: #eee;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.tag-filter .tag {
+  text-decoration: none;
+}
+
+.tag-filter .tag:hover {
+  background: lightblue;
+  text-decoration: none;
 }
