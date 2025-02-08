@@ -1,37 +1,62 @@
-/* Reset */
+/* ========== Global Variables ========== */
+:root {
+  --primary-color: #333;
+  --secondary-color: lightblue;
+  --link-hover-color: lightblue;
+  --footer-color: #555;
+  --background-color: #f0f0f0;
+  --font-family: Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-header: 1.8rem;
+  --spacing-sm: 0.625rem; /* 10px */
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --border-color: #ddd;
+  --border-radius: 5px;
+  --max-width: 75rem;
+  --max-thumbnail-width: 100px;
+  --max-image-width: 37.5rem;
+}
+
+/* ========== Reset Styles ========== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
 }
 
-/* General */
 body {
-  max-width: 75rem;
-  margin: 1.5rem auto;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  max-width: var(--max-width);
+  margin: var(--spacing-lg) auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
 }
 
+/* ========== Layout - Header & Footer ========== */
+footer {
+  border-top: 0.5px solid var(--border-color);
+}
+
+/* ========== Navigation ========== */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
 }
 
 nav a img {
   display: block;
-  width: 5rem; /* 80px */
+  width: 5rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.25rem; /* 20px */
+  gap: 1.25rem;
   margin: 0;
   padding: 0;
 }
@@ -41,80 +66,124 @@ nav ul li {
 }
 
 nav ul li a {
-  font-size: 1rem; /* Default body text size */
+  font-size: var(--font-size-base);
   text-decoration: none;
-  color: #333; /* Default text color */
-  position: relative; /* Set up for pseudo-element */
+  color: var(--primary-color);
+  position: relative;
   transition: color 0.3s ease;
 }
 
 nav ul li a::before {
-  content: ""; /* Empty content */
+  content: "";
   position: absolute;
-  left: -0.25rem; /* Shift the left edge slightly */
-  width: calc(100% + 0.5rem); /* Extend the width of the highlight */
+  left: -0.25rem;
+  width: calc(100% + 0.5rem);
   bottom: 0;
   height: 100%;
-  background-color: lightblue; /* Highlighter color */
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Smooth fade-in effect */
-  z-index: -1; /* Behind the text */
+  background-color: var(--secondary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
   transform: skewX(-15deg);
 }
 
 nav ul li a:hover::before {
-  opacity: 1; /* Show highlighter on hover */
+  opacity: 1;
 }
 
 nav ul li a:hover {
-  color: #333; /* Keep text color unchanged */
+  color: var(--primary-color);
 }
 
-h1,
-h2 {
-  color: blue;
+/* ========== Links ========== */
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
-footer {
-  width: 100%;
+a:hover {
+  color: var(--link-hover-color);
 }
 
+/* ========== Footer ========== */
 .footer-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: wrap; /* Ensure responsiveness */
+  max-width: var(--max-width);
   margin: 0 auto;
+  gap: 2rem;
+  padding-top: var(--spacing-lg);
 }
 
-.footer-copyright,
-.footer-license {
-  flex: 1; /* Make both sections take up equal width */
-  font-size: 0.85rem; /* Smaller text size */
-  color: #555; /* Darker color for readability */
-  word-wrap: break-word;
+.footer-content h1 {
+  font-size: var(--font-size-base);
 }
 
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 0 var(--spacing-sm); /* Add padding to the left/right */
+  margin-bottom: var(--spacing-md); /* Space between sections */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem; /* Increased margin for better spacing */
+}
+
+.footer-section ul li a {
+  color: var(--footer-color);
+  display: block; /* Makes the whole link clickable */
+  padding: 0.25rem 0; /* Adds padding around the link */
+}
+
+.footer-section ul li a:hover {
+  color: var(--link-hover-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--footer-color);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-sm);
+}
+
+/* ========== Responsive Media Queries ========== */
 @media (max-width: 768px) {
   body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .footer-content {
-    flex-direction: column; /* Stack elements on smaller screens */
+  .footer__content {
+    flex-direction: column;
     text-align: center;
+    gap: 1rem; /* Reduced gap on smaller screens */
   }
 
-  .footer-left,
-  .footer-right {
-    max-width: 100%;
+  .footer__section {
+    margin-bottom: 1rem; /* Add bottom margin to sections for better separation */
+  }
+
+  /* Optional: Adjust link size for mobile */
+  .footer__section ul li a {
+    font-size: 0.9rem; /* Slightly smaller font on smaller screens */
   }
 }
 
-/* Posts */
+/* ========== Posts ========== */
 .post-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Keep text color */
+  text-decoration: none;
+  color: inherit;
 }
 
 .post-preview {
@@ -122,21 +191,21 @@ footer {
   align-items: center;
   gap: 10px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .post-preview:hover {
-  background-color: #f0f0f0; /* Light gray background on hover */
+  background-color: var(--background-color);
   cursor: pointer;
 }
 
 .post-thumbnail {
-  width: 100px;
+  width: var(--max-thumbnail-width);
   height: auto;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 
 .post-info {
@@ -145,12 +214,12 @@ footer {
 }
 
 .post-info h1 {
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .post-meta {
   font-size: 0.9em;
-  color: #333;
+  color: var(--primary-color);
 }
 
 .author {
@@ -163,17 +232,17 @@ footer {
   color: #444;
 }
 
-/* Post */
+/* ========== Post Content ========== */
 .post {
   max-width: 50rem;
-  margin: 2rem auto;
+  margin: var(--spacing-lg) auto;
   padding: 1.5rem;
   line-height: 1.6;
 }
 
 .post-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .post-content {
@@ -181,49 +250,28 @@ footer {
   margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-  .post {
-    padding: 1rem;
-  }
-
-  .post-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .post-content {
-    padding: 0.5rem;
-  }
-}
-
-/* Figures */
+/* ========== Figures ========== */
 .responsive-img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem; /* Optional: adds a slight rounded corner */
+  border-radius: 0.5rem;
 }
 
 .image-container {
   display: block;
-  text-align: center; /* Centers the caption */
-  max-width: 37.5rem; /* Keeps the figure size consistent */
-  margin: 1rem auto; /* Centers the image */
+  text-align: center;
+  max-width: var(--max-image-width);
+  margin: var(--spacing-lg) auto;
 }
 
 .image-caption {
   font-size: 0.9rem;
-  color: #444; /* Greyish text */
+  color: #444;
   margin-top: 0.25rem;
   font-style: italic;
 }
 
-@media (max-width: 768px) {
-  .responsive-img {
-    width: 90%; /* Slightly smaller width on mobile */
-    max-width: 100%;
-  }
-}
-
-/* Tags */
+/* ========== Tags ========== */
 .tags {
   margin-left: 1rem;
 }
@@ -233,8 +281,8 @@ footer {
   padding: 3px 6px;
   border-radius: 4px;
   margin-right: 5px;
-  font-size: 1rem;
-  color: #333;
+  font-size: var(--font-size-base);
+  color: var(--primary-color);
 }
 
 .tag-filter .tag {
@@ -242,6 +290,6 @@ footer {
 }
 
 .tag-filter .tag:hover {
-  background: lightblue;
+  background: var(--secondary-color);
   text-decoration: none;
 }

@@ -1,13 +1,38 @@
 <div class="footer-content">
-  <div class="footer-copyright">
-    <p>Copyright {{ now.Year }}. Tous droits réservés.</p>
+  <div class="footer-section">
+    <h1>Navigation</h1>
+    <ul>
+      <li><a href="{{ "/" | relURL }}">Accueil</a></li>
+      <li><a href="{{ "/about/" | relURL }}">À propos</a></li>
+      <li><a href="{{ "/contact/" | relURL }}">Contact</a></li>
+    </ul>
   </div>
-  <div class="footer-license">
-    <p>
-      Tous droits réservés. Les oeuvres présentées sur ce site sont la propriété
-      exclusive de leurs auteurs. Toute reproduction, diffusion ou modification
-      sans autorisation écrite est interdite, sauf pour un usage strictement
-      personnel.
-    </p>
+  
+  <div class="footer-section">
+    <h1>Explorer</h1>
+    <ul>
+      <li><a href="{{ "/tags/" | relURL }}">Tags</a></li>
+      <li><a href="{{ "/categories/" | relURL }}">Catégories</a></li>
+      <li><a href="{{ "/archives/" | relURL }}">Archives</a></li>
+    </ul>
   </div>
+
+  <div class="footer-section">
+    <h1>Ressources</h1>
+    <ul>
+      <li><a href="{{ "/sitemap.xml" | relURL }}">Plan du site</a></li>
+      <li><a href="{{ "/legal/" | relURL }}">Mentions légales</a></li>
+      <li><a href="{{ "/privacy-policy/" | relURL }}">Confidentialité</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-section">
+    <h1>Suivez Happy Lalou</h1>
+    <ul class="social-links">
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <p>Copyright &copy; {{ now.Year }}. Tous droits réservés.</p>
 </div>
